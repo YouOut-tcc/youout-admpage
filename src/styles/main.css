@@ -1,0 +1,81 @@
+.root {
+  overflow: auto;
+  background-color: #8200a8;
+  height: 15%;
+}
+
+#main {
+  background-color: #ede0d6;
+  width: 100%;
+
+  /* padding: 1%; */
+  border-radius: 12px 12px 0px 0px;
+}
+
+#conteiner {
+  background-color: #ede0d6;
+  margin: 1%;
+  margin-top: 2%;
+  height: auto;
+}
+
+#conteinerMain {
+  /* overflow: auto; */
+  margin: 1%;
+  margin-top: 2%;
+  height: auto;
+  margin-bottom: 7%;
+}
+
+.layoutAConteiner_main {
+  background-color: var(--primary-color);
+  display: flex;
+
+  align-items: center;
+  text-align: center;
+}
+
+.layoutAConteiner_logo {
+  display: flex;
+  background-color: var(--secondary-color);
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.layoutAConteiner_body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  overflow-y: auto;
+}
+
+.layoutBConteinerMenu {
+  /* border: solid 1px red; */
+  height: 10%;
+  background-color: var(--secondary-color);
+  border-radius: 0px 0 15px 15px;
+}
+
+.layoutBConteiner_A {
+  background-color: var(--primary-color);
+  overflow: auto;
+}
+
+.layoutBConteiner_B {
+  /* border: solid 1px blue; */
+  height: auto;
+  overflow-x: clip;
+  background-color: var(--primary-color);
+}
+
+
+:root {
+  --primary-color: #ede0d6;
+  --secondary-color: #8200a8;
+  --color-click: #fe0472;
+}

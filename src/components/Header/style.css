@@ -1,0 +1,82 @@
+.logolb {
+  border-radius: 50%;
+  margin: 5%;
+  width: 9 0%;
+  margin-left: 4vh;
+  height: 80%;
+}
+.logoY{
+    display: contents;
+}
+
+.layoutBLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    position: relative; 
+}
+.layoutBLogo h1 {
+    display: contents;
+   font-size: 3vh;
+   text-align: center;
+   justify-content: center;
+   margin-left: 5%;
+   font-weight: bold;
+   color: var(--primary-color);
+}
+.line {
+  border: solid 1px var(--primary-color);
+  margin-left: 10%;
+  height: 85%;
+}
+.divHeader {
+  display: flex;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  /* margin-top: 1%; */
+}
+
+.iconesMenu {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  text-decoration: none;
+  
+}
+
+.iconesMenu p {
+    color: var(--primary-color);
+  padding-top: 0.5vh;
+  height: auto;
+  font-weight: bold;
+  font-size: 3vh;
+}
+
+.iconesHeader {
+    color: var(--primary-color);
+  /* width: 45%;
+  height: 45%; */
+  margin-right: 2vh;
+}
+
+.pagInicial:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.eventos:hover {
+  font-weight: bold;
+}
+
+.cupons:hover {
+  font-weight: bold;
+}
+
+.perfil:hover {
+  font-weight: bold;
+}
