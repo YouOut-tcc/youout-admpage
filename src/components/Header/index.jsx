@@ -8,6 +8,9 @@ import { BsCalendarCheck } from "react-icons/bs";
 import { ImTicket } from "react-icons/im";
 import { RxPerson } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { MdBlock } from "react-icons/md";
+import { RiPassValidFill } from "react-icons/ri";
+
 
 function Header() {
   return (
@@ -28,13 +31,13 @@ function Header() {
                    <AiFillHome size={50} className="iconesMenuHome iconesHeader" /> 
                    <p>Início</p>
                </Link>
-               <Link className="iconesMenu" to="eventos">
-                   <FaCalendarCheck size={40} className="iconesMenuEventos iconesHeader" /> 
-                   <p>Eventos</p>
+               <Link className="iconesMenu" to="/validação">
+                   <RiPassValidFill size={40} className="iconesMenuEventos iconesHeader" /> 
+                   <p>Validar Comercios</p>
                </Link>
-               <Link className="iconesMenu" to="cupons">
-                   <ImTicket size={40} className="iconesMenuCupons iconesHeader" /> 
-                   <p>Cupons</p>
+               <Link className="iconesMenu" to="/denuncias">
+                   <MdBlock size={40} className="iconesMenuCupons iconesHeader" /> 
+                   <p>Denuncias</p>
                </Link>
                <Link className="iconesMenu" to="perfil">
                    <FaUserAlt size={40} className="iconesMenuPerfil iconesHeader" /> 

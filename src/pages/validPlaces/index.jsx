@@ -3,6 +3,19 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from "../../components/LogoInicial";
 import Modal from "../../components/modalA";
+import { Link } from "react-router-dom";
+import Styles from "../validPlaces/style.css";
+
+function ModalPlaces (){
+    return (
+    <div className='modalValid'>
+        <h1>teste</h1>  
+        <h1>123</h1>  
+        <h1>234</h1> 
+        <h1>456</h1>  
+    </div>
+    )
+}
 
 function Index() {
 
@@ -20,9 +33,12 @@ function Index() {
 
     
     return (
-        <>
-        <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}> 
         
+        <>
+
+        <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} title="aa"> 
+        <ModalPlaces/>
+           
         </Modal>
 
             <Table striped bordered hover>
@@ -46,7 +62,7 @@ function Index() {
                                 <td>Lorem</td>
                                 <td>123456789123</td>
                                 <td>12/12/2022</td>
-                                <td> <button  onClick={() => setOpenModal(true)}> </button></td>
+                                <td> <button  onClick={() => setOpenModal(true)}>Mais Informações</button></td>
                                 <td>
                                     <button className='btnEditar'>Editar</button>
                                     <button className='btnExcluir'>Excluir</button>
@@ -57,7 +73,7 @@ function Index() {
                 </tbody>
             </Table> 
         </>
-
+            
         
     );
 }
