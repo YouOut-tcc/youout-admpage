@@ -5,6 +5,9 @@ import Logo from "../../components/LogoInicial";
 import Modal from "../../components/modalA";
 import Styles from "../denuncias/style.css";
 
+import {getComentariosDenuncias, deletarPlace, getPlacesDenuncias, getRespostasDenuncias, deletarComentario, deletarRespostas} from "../../services/commerce";
+
+
 function Index() {
   const [openModal, setOpenModal] = useState(false);
   const [showplaces, setshowplaces] = useState(false);
@@ -56,7 +59,7 @@ const switchTable = (table) => {
         <button className = "btnPlaces" onClick={()=>{switchTable("places")}}>Estabelecimentos</button>
         <button className = "btnRespostas" onClick={()=>{switchTable("respostas")}}>Respostas</button>
         <button className = "btnAvaliacoes" onClick={()=>{switchTable("avaliacoes")}}>Avaliações</button>
-        <button className = "btnLimpar" onClck={()=>{switchTable("limpar")}}>Limpar</button>
+        <button className = "btnLimpar" onClick={()=>{switchTable("limpar")}}>Limpar</button>
       </div>
 
       {showplaces && (
