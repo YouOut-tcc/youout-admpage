@@ -3,6 +3,7 @@ import Table from "react-bootstrap/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "../../components/LogoInicial";
 import Modal from "../../components/modalA";
+import Styles from "../denuncias/style.css";
 
 function Index() {
   const [openModal, setOpenModal] = useState(false);
@@ -29,7 +30,13 @@ const switchTable = (table) => {
             setshowplaces(false);
             setshowavalicaçoes(false);
             break;    
-    
+
+        case "limpar":
+          setshowrespostas(false);
+          setshowplaces(false);
+          setshowavalicaçoes(false);
+          break;    
+
         default:
             break;
     }
@@ -44,12 +51,16 @@ const switchTable = (table) => {
         setModalOpen={() => setOpenModal(!openModal)}
         title="Perfil Completo"
       ></Modal>
-      <button onClick={()=>{switchTable("places")}}>Estabelecimentos</button>
-      <button onClick={()=>{switchTable("respostas")}}>Respostas</button>
-      <button onClick={()=>{switchTable("avaliacoes")}}>Avaliações</button>
+
+      <div className=" buttons">
+        <button className = "btnPlaces" onClick={()=>{switchTable("places")}}>Estabelecimentos</button>
+        <button className = "btnRespostas" onClick={()=>{switchTable("respostas")}}>Respostas</button>
+        <button className = "btnAvaliacoes" onClick={()=>{switchTable("avaliacoes")}}>Avaliações</button>
+        <button className = "btnLimpar" onClck={()=>{switchTable("limpar")}}>Limpar</button>
+      </div>
 
       {showplaces && (
-        <Table striped bordered hover>
+        <Table striped bordered hover className="tabela">
           <thead>
             <tr>
               <th>ID</th>
@@ -63,8 +74,6 @@ const switchTable = (table) => {
           </thead>
           <tbody>
             {
-              /* {actors &&
-                        actors.map((item)=>( */
               <tr>
                 <td>1</td>
                 <td>logo</td>
@@ -82,13 +91,12 @@ const switchTable = (table) => {
                   <button className="btnExcluir">Excluir</button>
                 </td>
               </tr>
-              // ))
             }
           </tbody>
         </Table>
       )}
       {showresposta && (
-        <Table striped bordered hover>
+        <Table striped bordered hover className="tabela">
           <thead>
             <tr>
               <th>ID Autor</th>
@@ -102,8 +110,6 @@ const switchTable = (table) => {
           </thead>
           <tbody>
             {
-              /* {actors &&
-                        actors.map((item)=>( */
               <tr>
                 <td>1</td>
                 <td>Lucas</td>
@@ -121,13 +127,12 @@ const switchTable = (table) => {
                   <button className="btnExcluir">Excluir</button>
                 </td>
               </tr>
-              // ))
             }
           </tbody>
         </Table>
       )}
       {showavalicaçoes && (
-        <Table striped bordered hover>
+        <Table striped bordered hover className="tabela">
           <thead>
             <tr>
               <th>ID Autor</th>
@@ -158,7 +163,6 @@ const switchTable = (table) => {
                   <button className="btnExcluir">Excluir</button>
                 </td>
               </tr>
-              // ))
             }
           </tbody>
         </Table>

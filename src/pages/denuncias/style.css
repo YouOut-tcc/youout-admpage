@@ -1,0 +1,16 @@
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btnPlaces, .btnRespostas, .btnAvaliacoes, .btnLimpar{
+    margin-top: 2%;
+    padding: 10px;
+}
+
+.tabela{
+    margin-top: 1%;
+}
+
+
+

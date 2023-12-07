@@ -21,23 +21,13 @@ function Index() {
 
     const [openModal, setOpenModal] = useState(false);
 
-    // const [actors, setActors] = useState([]);
-
-    // useEffect(() => {
-    //     async function getActors() {
-    //         const {data} = await api.get('/ator');
-    //         setActors(data);
-    //     }
-    //     getActors();
-    // }, [actors]);
-
-    
     return (
         
         <>
 
-        <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} title="aa"> 
-        <ModalPlaces/>
+        <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} title="Perfil Completo"> 
+            
+            <ModalPlaces/>
            
         </Modal>
 
@@ -54,21 +44,19 @@ function Index() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {actors &&
-                        actors.map((item)=>( */
-                            <tr >
-                                <td>1</td>
-                                <td>logo</td>
-                                <td>Lorem</td>
-                                <td>123456789123</td>
-                                <td>12/12/2022</td>
-                                <td> <button  onClick={() => setOpenModal(true)}>Mais Informações</button></td>
-                                <td>
-                                    <button className='btnEditar'>Editar</button>
-                                    <button className='btnExcluir'>Excluir</button>
-                                </td>
-                            </tr>
-                        // ))
+                    {
+                    <tr >
+                        <td>1</td>
+                        <td>logo</td>
+                        <td>Lorem</td>
+                        <td>123456789123</td>
+                        <td>12/12/2022</td>
+                        <td> <button  onClick={() => setOpenModal(true)}>Mais Informações</button></td>
+                        <td>
+                            <button className='btnEditar'>Editar</button>
+                            <button className='btnExcluir'>Excluir</button>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </Table> 
