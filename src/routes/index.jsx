@@ -10,7 +10,7 @@ import { ThemeProvider } from "@mui/material/styles";
 
 const rotas=createBrowserRouter([
   {
-    path: "/",
+    path: "/home",
     element: <LayoutB/>,
     children: [
       {
@@ -18,17 +18,17 @@ const rotas=createBrowserRouter([
         element: <Validar/>
       }, 
       {
-        path: "/denuncias",
+        path: "denuncias",
         element: <Denuncias/>,
       },
       {
-        path: "/validação",
+        path: "validação",
         element: <Validar/>,
       }
     ]
   },
   {
-    path: "/teste",
+    path: "/",
     element: <LayoutA/>,
     children: [
       {

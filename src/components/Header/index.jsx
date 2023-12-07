@@ -25,15 +25,15 @@ function Header() {
           <div className="line"></div>
         </div> 
         <div className="menu">
-               <Link className="iconesMenu" to="">
+               <Link className="iconesMenu" to="/home">
                    <AiFillHome size={50} className="iconesMenuHome iconesHeader" /> 
                    <p>Início</p>
                </Link>
-               <Link className="iconesMenu" to="/validação">
+               <Link className="iconesMenu" to="validação">
                    <RiPassValidFill size={40} className="iconesMenuEventos iconesHeader" /> 
                    <p>Validar Comércios</p>
                </Link>
-               <Link className="iconesMenu" to="/denuncias">
+               <Link className="iconesMenu" to="denuncias">
                    <MdBlock size={40} className="iconesMenuCupons iconesHeader" /> 
                    <p>Denúncias</p>
                </Link>
