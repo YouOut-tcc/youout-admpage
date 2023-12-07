@@ -1,0 +1,75 @@
+.containerInfos {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  height: auto;
+  width: 100%;
+  /* justify-content: center; */
+  margin-top: 25vh;
+}
+
+.inputLogin{
+  height: auto;
+}
+
+.formLogin{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.inputA, .inputB{
+  height: auto;
+  margin: 3vh;
+}
+
+.btnEntrar, .btnVoltar{
+  width: 7rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.1s; 
+  background-color: var(--secondary-color); 
+  margin-bottom: 2vh;
+}
+.btnEntrar:active,
+.btnVoltar:active {
+  background-color: var(--color-click)
+}
+.esqueceuSenha{
+  margin: 2rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+.OR{
+  margin: 5%;
+  height: auto;
+}
+.icon-google {
+  font-size: 30px;
+  margin-top: 2rem;
+ 
+}
+.googleButton{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--secondary-color);
+}
+.linkPg{
+  text-decoration: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px; 
+  margin-top: 4px; 
+text-align: left;
+}
+
