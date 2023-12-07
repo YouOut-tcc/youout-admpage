@@ -135,6 +135,48 @@ async function recusarRequest(id) {
     }
 }
 
+async function deletarDenunciasComentarios(id) {
+  try {
+    await api.delete(`/comentarios/denuncias/${id}`)
+  } catch (error) {
+    console.log(error.constructor.name);
+    if (error instanceof AxiosError) {
+      console.log(error.response.status);
+      console.log(error.response.data.message);
+    } else if (error instanceof ReferenceError) {
+      console.log(error.message);
+    }
+  }
+}
+
+async function deletarDenunciasRespostas(id) {
+  try {
+    await api.delete(`/respostas/denuncias/${id}`)
+  } catch (error) {
+    console.log(error.constructor.name);
+    if (error instanceof AxiosError) {
+      console.log(error.response.status);
+      console.log(error.response.data.message);
+    } else if (error instanceof ReferenceError) {
+      console.log(error.message);
+    }
+  }
+}
+
+async function deletarDenunciasPlaces(id) {
+  try {
+    await api.delete(`/places/denuncias/${id}`)
+  } catch (error) {
+    console.log(error.constructor.name);
+    if (error instanceof AxiosError) {
+      console.log(error.response.status);
+      console.log(error.response.data.message);
+    } else if (error instanceof ReferenceError) {
+      console.log(error.message);
+    }
+  }
+}
+
 export {
     recusarRequest,
     aceitarRequest,
@@ -145,4 +187,7 @@ export {
     deletarComentario,
     deletarPlace,
     deletarRespostas,
+    deletarDenunciasComentarios,
+    deletarDenunciasPlaces,
+    deletarDenunciasRespostas,
 }
