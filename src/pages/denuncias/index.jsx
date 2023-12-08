@@ -118,7 +118,7 @@ const switchTable = (table) => {
             
         </Table>
       
-      {showresposta && (
+      
         <Table striped bordered hover className="tabela">
           <thead>
             <tr>
@@ -132,29 +132,30 @@ const switchTable = (table) => {
             </tr>
           </thead>
           <tbody>
-            {
-              <tr>
-                <td>1</td>
-                <td>Lucas</td>
-                <td>34</td>
-                <td>carlos</td>
-                <td>
+            {showresposta && respostas.map((item) => (
+              <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.fk_resposta_id}</td>
+              <td>{item.fk_usuario_id}</td>
+              <td>{item.motivo}</td>
+              <td>{item.criado}</td>
+              <td>
                   {" "}
                   <button onClick={() => setOpenModalDenuncias(true)}>
                     ...
                   </button>
                 </td>
-                <td>10/12/2022</td>
+                {/* <td>10/12/2022</td> */}
                 <td>
                   <button className="btnEditar">Editar</button>
                   <button className="btnExcluir">Excluir</button>
                 </td>
               </tr>
+              ))
             }
           </tbody>
         </Table>
-      )}
-      {showavalicaçoes && (
+      
         <Table striped bordered hover className="tabela">
           <thead>
             <tr>
@@ -168,28 +169,30 @@ const switchTable = (table) => {
             </tr>
           </thead>
           <tbody>
-            {
-              <tr>
-                <td>4</td>
-                <td>alam</td>
-                <td>7</td>
-                <td>fabio</td>
-                <td>
+            {showavalicaçoes && avalicaçoes.map((item) => ( //erro na avalicoes.map
+              <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.fk_avaliacao_id}</td>
+              <td>{item.fk_usuario_id}</td>
+              <td>{item.motivo}</td>
+              <td>{item.criado}</td>
+              <td>
                   {" "}
                   <button onClick={() => setOpenModalDenuncias(true)}>
                     ...
                   </button>
                 </td>
-                <td>10/12/2322</td>
+                {/* <td>10/12/2322</td> */}
                 <td>
                   <button className="btnEditar">Editar</button>
                   <button className="btnExcluir">Excluir</button>
                 </td>
               </tr>
+               ))
             }
           </tbody>
         </Table>
-      )}
+      
     </>
   );
 }
