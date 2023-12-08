@@ -9,10 +9,27 @@ import {getComentariosDenuncias, deletarPlace, getPlacesDenuncias, getRespostasD
 
 
 function Index() {
-  const [openModal, setOpenModal] = useState(false);
+  const [openModalDenuncias, setOpenModalDenuncias] = useState(false);
   const [showplaces, setshowplaces] = useState(false);
   const [showavalicaçoes, setshowavalicaçoes] = useState(false);
   const [showresposta, setshowrespostas] = useState(false);
+  
+  const [places, setPlaces] = useState([]);
+  const [respostas, setRespostas] = useState([]);
+  const [comentarios, setComentarios] = useState([]);
+  
+
+  useEffect(()=> {
+    const getDenunciasPlaces = (async () => {
+      try {
+        let res = await getPlacesDenuncias();
+        setPlaces(res)
+      } catch (error) {
+        console.log(error.message)
+      }
+    })
+    getDenunciasPlaces()
+  }, [])
 
 const switchTable = (table) => {
     switch (table) {
@@ -46,13 +63,12 @@ const switchTable = (table) => {
 
     
 }
-
   return (
     <>
       <Modal
-        isOpen={openModal}
-        setModalOpen={() => setOpenModal(!openModal)}
-        title="Perfil Completo"
+        isOpen={openModalDenuncias}
+        setModalOpen={() => setOpenModalDenuncias(!openModalDenuncias)}
+        title="Motivo"
       ></Modal>
 
       <div className=" buttons">
@@ -62,7 +78,7 @@ const switchTable = (table) => {
         <button className = "btnLimpar" onClick={()=>{switchTable("limpar")}}>Limpar</button>
       </div>
 
-      {showplaces && (
+      
         <Table striped bordered hover className="tabela">
           <thead>
             <tr>
@@ -75,18 +91,19 @@ const switchTable = (table) => {
               <th></th>
             </tr>
           </thead>
+            
           <tbody>
-            {
-              <tr>
-                <td>1</td>
+              {showplaces && places.map((item) => (
+                <tr key={item.id}>
+                <td>{item.id}</td>
                 <td>logo</td>
-                <td>asdfasdf</td>
-                <td>asdfdfasfd</td>
-                <td>12/12/2022</td>
+                <td>{item.nome}</td>
+                <td>{item.cnpj}</td>
+                <td>{item.solicitado}</td>
                 <td>
                   {" "}
-                  <button onClick={() => setOpenModal(true)}>
-                    Outras Informações
+                  <button onClick={() => setOpenModalDenuncias(true)}>
+                   ...
                   </button>
                 </td>
                 <td>
@@ -94,10 +111,13 @@ const switchTable = (table) => {
                   <button className="btnExcluir">Excluir</button>
                 </td>
               </tr>
-            }
+              ))
+              }
+              
           </tbody>
+            
         </Table>
-      )}
+      
       {showresposta && (
         <Table striped bordered hover className="tabela">
           <thead>
@@ -120,7 +140,7 @@ const switchTable = (table) => {
                 <td>carlos</td>
                 <td>
                   {" "}
-                  <button onClick={() => setOpenModal(true)}>
+                  <button onClick={() => setOpenModalDenuncias(true)}>
                     ...
                   </button>
                 </td>
@@ -156,7 +176,7 @@ const switchTable = (table) => {
                 <td>fabio</td>
                 <td>
                   {" "}
-                  <button onClick={() => setOpenModal(true)}>
+                  <button onClick={() => setOpenModalDenuncias(true)}>
                     ...
                   </button>
                 </td>
